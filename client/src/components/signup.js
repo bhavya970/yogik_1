@@ -13,7 +13,7 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/register", { userName, email, password })
+      .post("https://yogik.vercel.app/register", { userName, email, password })
       .then((result) => {
         console.log(result)
         toast.success("Registerd successfully",{position: toast.POSITION.TOP_CENTER});
