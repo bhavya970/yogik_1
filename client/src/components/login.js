@@ -13,7 +13,7 @@ function Login() {
     },[email])
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:8080/login',{email,password})
+        axios.post('https://yogik.vercel.app/login',{email,password})
         .then(result=>{
             console.log(result)
             if(result.data==="Success")
