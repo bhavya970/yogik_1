@@ -10,12 +10,7 @@ const app = express();
 
 // const userModel=require('./model/User.model.js')
 app.use(express.json());
-app.use(cors(
-    {
-        origin:[""],
-        methods:["POST","GET"],
-    }
-));
+app.use(cors());
 app.use(morgan('tiny'));
 app.disable('x-powered-by'); 
 
