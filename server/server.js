@@ -18,13 +18,7 @@ const port = 8080;
 
 /** HTTP GET Request */
 app.post('/register',function (req,res) {
-    const requestData = req.body;
-    // UserModel.findOne({email:email})
-    // .then(user=>{
-    //     if(user){
-    //         res.json("Exist")
-    //     }
-    // })
+    // console.log("ghjk")
     UserModel.create(req.body)
     .then(data=>res.json(data))
     .catch(err=>res.json(err))

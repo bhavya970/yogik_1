@@ -4,21 +4,24 @@ import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // toast.configure()
 function Login() {
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     const [emailError,setEmailError]=useState('');
+    const navigate=useNavigate()
     useEffect(()=>{
     },[email])
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('https://yogik.vercel.app/login',{email,password})
+        axios.post('http://localhost:8080/login',{email,password})
         .then(result=>{
             console.log(result)
             if(result.data==="Success")
             {
                 toast.success("Welcome to Yogik", {position: toast.POSITION.TOP_CENTER})
+                navigate('/')
             }
             else if(result.data==="Pwd")
             {
